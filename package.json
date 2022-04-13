@@ -2,6 +2,7 @@
   "name": "@berviantoleo/feature-flag",
   "version": "0.1.0",
   "main": "lib/index.js",
+  "private": false,
   "repository": "git@github.com:berviantoleo/feature-flag.git",
   "author": "Bervianto Leo Pratama <bervianto.leo@gmail.com>",
   "license": "MIT",
@@ -16,5 +17,8 @@
   },
   "dependencies": {
     "@aws-sdk/client-appconfigdata": "^3.67.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
