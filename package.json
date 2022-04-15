@@ -1,6 +1,6 @@
 {
   "name": "@berviantoleo/feature-flag",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "private": false,
   "repository": "git@github.com:berviantoleo/feature-flag.git",
