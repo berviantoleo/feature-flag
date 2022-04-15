@@ -17,6 +17,10 @@ jobs:
           node-version: 16
       - run: yarn --frozen-lockfile
       - run: yarn build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build-artifact
+          path: lib/
 
   publish-gpr:
     needs: build
@@ -30,8 +34,26 @@ jobs:
         with:
           node-version: 16
           registry-url: https://npm.pkg.github.com/
-      - run: yarn --frozen-lockfile
-      - run: yarn build
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: lib/
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+      - uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
+          path: lib/
+      - run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
