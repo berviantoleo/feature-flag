@@ -22,7 +22,6 @@ const getToken = async (): Promise<string> => {
 const featureFlag = async (flag: string): Promise<boolean> => {
   if (!existingToken) {
     existingToken = await getToken();
-    console.log(existingToken);
   }
   try {
     const command = new GetLatestConfigurationCommand({
@@ -36,14 +35,12 @@ const featureFlag = async (flag: string): Promise<boolean> => {
         str += String.fromCharCode(response.Configuration[i]);
       }
       const allFlag = JSON.parse(str);
-      console.log(allFlag);
       flags = Object.assign({}, allFlag);
     }
     return Boolean(flags[flag]?.enabled);
   } catch (err) {
     if (err instanceof BadRequestException) {
       existingToken = await getToken();
-      console.log(existingToken);
       // recall
       return featureFlag(flag);
     } else {
