@@ -23,6 +23,7 @@ jobs:
     - run: yarn build
     - run: yarn doc
     - uses: actions/upload-artifact@v3
+      if: ${{ matrix.node-version == '18.x' }}
       with:
         name: docs
         path: docs/
