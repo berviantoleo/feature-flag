@@ -8,6 +8,10 @@ import {
 const client = new AppConfigDataClient({});
 let existingToken: string;
 
+/**
+ * getToken to get new Auth token
+ * @returns New Auth Token in base64 string
+ */
 const getToken = async (): Promise<string> => {
   const getSession = new StartConfigurationSessionCommand({
     ApplicationIdentifier: process.env.APP_CONFIG_APP_IDENTIFIER,
@@ -19,6 +23,11 @@ const getToken = async (): Promise<string> => {
   return sessionToken.InitialConfigurationToken || "";
 };
 
+/**
+ * featureFlag to get the flag is turned on
+ * @param flag target feature flag
+ * @returns return true when it's turned on
+ */
 const featureFlag = async (flag: string): Promise<boolean> => {
   if (!existingToken) {
     existingToken = await getToken();
