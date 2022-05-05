@@ -21,7 +21,7 @@ jobs:
         cache: 'yarn'
     - run: yarn --frozen-lockfile
     - run: yarn build
-    - run: yarn docs
+    - run: yarn doc
     - uses: actions/upload-artifact@v3
       with:
         name: docs
