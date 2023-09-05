@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/node": "^20.5.7",
     "ts-node-dev": "^2.0.0",
-    "typedoc": "^0.25.0",
+    "typedoc": "^0.25.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
