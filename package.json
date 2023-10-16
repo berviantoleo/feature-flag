@@ -12,7 +12,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/node": "^20.8.4",
+    "@types/node": "^20.8.6",
     "ts-node-dev": "^2.0.0",
     "typedoc": "^0.25.2",
     "typescript": "^5.2.2"
