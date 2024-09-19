@@ -15,7 +15,7 @@
     "@types/node": "^22.5.4",
     "ts-node-dev": "^2.0.0",
     "typedoc": "^0.26.7",
-    "typescript": "^5.5.4"
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "@aws-sdk/client-appconfigdata": "^3.651.1"
