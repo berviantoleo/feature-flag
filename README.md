@@ -25,7 +25,7 @@ APP_CONFIG_ENVIRONMENT_IDENTIFIER=""
 
 MIT
 
-```markdown
+```
 MIT License
 
 Copyright (c) 2022 Bervianto Leo Pratama
