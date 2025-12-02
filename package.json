@@ -18,7 +18,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@aws-sdk/client-appconfigdata": "^3.939.0"
+    "@aws-sdk/client-appconfigdata": "^3.940.0"
   },
   "publishConfig": {
     "access": "public"
